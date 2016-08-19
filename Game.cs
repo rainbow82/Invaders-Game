@@ -11,6 +11,7 @@ namespace TreehouseDefense
           
           Point point = new Point(4,2);
           
-          bool isOnMap = map.OnMap(point);
+          Console.WriteLine(point.DistanceTo(5,5));
     }
+  }
 }
