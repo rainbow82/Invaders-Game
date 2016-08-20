@@ -9,13 +9,14 @@ namespace TreehouseDefense
           Tower tower = new Tower();
           Map map = new Map(8, 5);
           
-          Point x = new MapLocation(4,2);
+          try{
+            MapLocation mapLocation = new MapLocation(20, 20, map);
+          }
+          catch(Exception)
+          {
+            Console.WriteLine("That map location is not on the map.");
+          }
           
-          Point p = x;
-          
-          map.OnMap(new MapLocation(0,0));
-          
-          Console.WriteLine(x.DistanceTo(5,5));
     }
   }
 }
