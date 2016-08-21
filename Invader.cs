@@ -5,20 +5,28 @@ namespace TreehouseDefense
     private readonly Path _path;
     private int _pathStep = 0;
     
-    //using auto property for getter and setter
-    public MapLocation Location{ get; private set;}
+    public MapLocation Location =>  _path.GetLocationAt(_pathStep);
+    
+    public int Health{get; private set;} = 2;
+    
+    public bool HasScored {get {return _pathStep >= _path.Length;}}
+    
+    public bool IsNeutralized => Health <= 0;
+    
+    public bool IsActive => !(IsNeutralized || HasScored);
     
     public Invader(Path path)
     {
       _path = path;
-      Location = _path.GetPathAtLocation(_pathStep);
-    }
+     }
     
-    public void Move()
+    public void Move() => _pathStep ++;
+    
+    public void DecreaseHealth(int factor)
     {
-      _pathStep ++;
-      Location = _path.GetLocationAt(_pathStep);
+      Health -= factor;
     }
+  
   }
   
 }
