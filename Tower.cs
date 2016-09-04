@@ -34,7 +34,7 @@ namespace TreehouseDefense
                         Console.WriteLine("Shot at and hit an invader!");
                         if(invader.IsNeutralized)
                         {
-                            Console.WriteLine("Neutralized an invader!");
+                            Console.WriteLine("Neutralized an invader at " + invader.Location + "!");
                         }
                     }
                     else
